@@ -1,4 +1,19 @@
-node_modules
+lib
 
-vscode
-dist
+node_modules
+yarn.lock
+yarn-debug.log
+yarn-error.log
+package-lock.json
+npm-debug.log
+
+#editot
+.eslintcache
+.DS_Store
+.idea
+.vscode
+.yarn
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
