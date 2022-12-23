@@ -2,14 +2,20 @@
   "name": "emokit",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.cjs",
+  "module": "lib/index.mjs",
+  "typings": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:cjs": "esbuild src/index.ts --outfile=lib/index.cjs --bundle --sourcemap --platform=node --target=es2019",
+    "compile:esm": "esbuild src/index.ts --outfile=lib/index.mjs --bundle --sourcemap --platform=neutral --target=esnext",
+    "build": "npm run compile:cjs && npm run compile:esm && tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "esbuild": "^0.16.10",
+    "esbuild-register": "^3.4.2",
     "typescript": "^4.9.4"
   }
 }
