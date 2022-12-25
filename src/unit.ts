@@ -1,3 +1,4 @@
+import { RangeOf2 } from './types'
 import { isString, isUndefined } from './utils'
 
 /**
@@ -6,7 +7,7 @@ import { isString, isUndefined } from './utils'
  * @param decimalPlaces 
  * @param unit optional, if not, adaptive
  */
-function bytesConvert(bytes: number | string, decimalPlaces: number, unit?: number) {
+function bytesConvert(bytes: number | string, decimalPlaces: number, unit?: RangeOf2<0, 8>) {
   const symbols = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
   if(isString(bytes)) {
     bytes = +bytes
