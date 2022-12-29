@@ -2,6 +2,10 @@ function isString(val: any): val is string {
   return typeof val === 'string'
 }
 
+function isNumber(val: any): val is number {
+  return typeof val === 'number'
+}
+
 function isUndefined(val: any): val is undefined {
   return typeof val === 'undefined'
 }
@@ -18,6 +22,7 @@ function isIPv4CIDR(address: string): boolean {
 
 export {
   isString,
+  isNumber,
   isUndefined,
   isIPv4,
   isIPv4CIDR
