@@ -6,8 +6,20 @@ function isNumber(val: any): val is number {
   return typeof val === 'number'
 }
 
+function isBoolean(val: any): val is boolean {
+  return typeof val === 'boolean'
+}
+
+function isSymbol(val: any): val is symbol {
+  return typeof val === 'symbol'
+}
+
 function isUndefined(val: any): val is undefined {
   return typeof val === 'undefined'
+}
+
+function isBigint(val: any): val is bigint {
+  return typeof val === 'bigint'
 }
 
 function isIPv4(address: string): boolean {
@@ -23,7 +35,10 @@ function isIPv4CIDR(address: string): boolean {
 export {
   isString,
   isNumber,
+  isBoolean,
+  isSymbol,
   isUndefined,
+  isBigint,
   isIPv4,
   isIPv4CIDR
 }
