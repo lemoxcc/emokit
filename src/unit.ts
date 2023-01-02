@@ -32,7 +32,7 @@ function bytesConvert(bytes: number | string, decimalPlaces: number, unit?: Rang
   
   bytes = round((bytes + 'e' + decimalPlaces) as any) / pow(10, decimalPlaces)
 
-  return bytes
+  return `${bytes} ${symbols[index]}`
 }
 
 export {
