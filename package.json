@@ -10,8 +10,18 @@
     "compile:esm": "esbuild src/index.ts --outfile=lib/index.mjs --bundle --sourcemap --platform=neutral --target=esnext",
     "build": "npm run compile:cjs && npm run compile:esm && tsc"
   },
-  "keywords": [],
-  "author": "",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fanttasy/emokit.git"
+  },
+  "homepage": "https://github.com/fanttasy/emokit",
+  "keywords": [
+    "kit"
+  ],
+  "author": "fanttasy",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.11.17",
