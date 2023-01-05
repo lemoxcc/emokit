@@ -32,6 +32,22 @@ function isIPv4CIDR(address: string): boolean {
   return pattern.test(address)
 }
 
+function randomSelect<T>(targetArr: T[], quantity: number): T[] {
+  const { length } = targetArr
+  if(quantity > length) {
+    throw new Error('The quantity can\'t be greater than the sum');
+  }
+  const result: T[] = []
+  while(result.length < quantity) {
+    const pos = Math.floor(Math.random() *(length - result.length))
+    result.push(targetArr[pos])
+    const temp = targetArr[pos]
+    targetArr[pos] = targetArr[length - result.length]
+    targetArr[length - result.length] = temp
+  }
+  return result
+}
+
 export {
   isString,
   isNumber,
@@ -40,5 +56,6 @@ export {
   isUndefined,
   isBigint,
   isIPv4,
-  isIPv4CIDR
+  isIPv4CIDR,
+  randomSelect
 }
