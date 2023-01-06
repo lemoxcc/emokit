@@ -41,9 +41,7 @@ function randomSelect<T>(targetArr: T[], quantity: number): T[] {
   while(result.length < quantity) {
     const pos = Math.floor(Math.random() *(length - result.length))
     result.push(targetArr[pos])
-    const temp = targetArr[pos]
-    targetArr[pos] = targetArr[length - result.length]
-    targetArr[length - result.length] = temp
+    ;[targetArr[pos], targetArr[length - result.length]] = [targetArr[result.length], targetArr[pos]]
   }
   return result
 }
