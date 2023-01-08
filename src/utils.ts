@@ -22,6 +22,15 @@ function isBigint(val: any): val is bigint {
   return typeof val === 'bigint'
 }
 
+function isPlainObject(val: any): boolean {
+  if(Object.prototype.toString.call(val) !== '[object Object]') {
+    return false
+  }
+
+  const prototype = Object.getPrototypeOf(val)
+  return prototype !== null || prototype === Object.prototype
+}
+
 function isIPv4(address: string): boolean {
   const pattern = /^((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])$/
   return pattern.test(address)
@@ -83,6 +92,7 @@ export {
   isSymbol,
   isUndefined,
   isBigint,
+  isPlainObject,
   isIPv4,
   isIPv4CIDR,
   randomSelect,
