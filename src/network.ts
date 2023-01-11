@@ -1,4 +1,4 @@
-import { isIPv4, isIPv4CIDR } from './utils'
+import { isIPv4, isIPv4CIDR } from './rules'
 
 function splitIPv4(address: string): number[] {
   if(!isIPv4(address)) {
