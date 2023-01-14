@@ -76,6 +76,21 @@ function generateUUID() {
   })
 }
 
+function getURLParams(url: string) {
+  const queryString = url.split('?')[1] ?? null
+  if(!queryString) {
+    return {}
+  }
+  const result: { [key: string]: string } = {}
+  const paramsSplit = queryString.split('&')
+  for(const item of paramsSplit) {
+    const [key, value] = item.split('=');
+    result[key] = value
+  }
+
+  return result
+}
+
 export {
   isString,
   isNumber,
@@ -85,5 +100,6 @@ export {
   isBigint,
   isPlainObject,
   randomSelect,
-  generateUUID
+  generateUUID,
+  getURLParams
 }
