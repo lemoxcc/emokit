@@ -22,6 +22,10 @@ function isBigint(val: any): val is bigint {
   return typeof val === 'bigint'
 }
 
+function isArray(val: any): boolean {
+  return Object.prototype.toString.call(val) === '[object Array]'
+}
+
 function isPlainObject(val: any): boolean {
   if(Object.prototype.toString.call(val) !== '[object Object]') {
     return false
@@ -30,7 +34,6 @@ function isPlainObject(val: any): boolean {
   const prototype = Object.getPrototypeOf(val)
   return prototype !== null || prototype === Object.prototype
 }
-
 
 function randomSelect<T>(targetArr: T[], quantity: number): T[] {
   const { length } = targetArr
@@ -98,6 +101,7 @@ export {
   isSymbol,
   isUndefined,
   isBigint,
+  isArray,
   isPlainObject,
   randomSelect,
   generateUUID,
