@@ -35,6 +35,10 @@ function isPlainObject(val: any): boolean {
   return prototype !== null || prototype === Object.prototype
 }
 
+function isRegExp(val: any): boolean {
+  return Object.prototype.toString.call(val) === '[object RegExp]'
+}
+
 function randomSelect<T>(targetArr: T[], quantity: number): T[] {
   const { length } = targetArr
   if(quantity > length) {
