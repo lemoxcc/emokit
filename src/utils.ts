@@ -39,6 +39,10 @@ function isRegExp(val: any): boolean {
   return Object.prototype.toString.call(val) === '[object RegExp]'
 }
 
+function isDate(val: any) {
+  return Object.prototype.toString.call(val) === '[object Date]'
+}
+
 function randomSelect<T>(targetArr: T[], quantity: number): T[] {
   const { length } = targetArr
   if(quantity > length) {
