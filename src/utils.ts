@@ -111,6 +111,8 @@ export {
   isBigint,
   isArray,
   isPlainObject,
+  isRegExp,
+  isDate,
   randomSelect,
   generateUUID,
   getURLParams
