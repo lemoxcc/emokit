@@ -39,8 +39,12 @@ function isRegExp(val: any): boolean {
   return Object.prototype.toString.call(val) === '[object RegExp]'
 }
 
-function isDate(val: any) {
+function isDate(val: any): boolean {
   return Object.prototype.toString.call(val) === '[object Date]'
+}
+
+function isNativeFunction(val: any): boolean {
+  return typeof val === 'function' && /native code/.test(val.toString())
 }
 
 function randomSelect<T>(targetArr: T[], quantity: number): T[] {
@@ -113,6 +117,7 @@ export {
   isPlainObject,
   isRegExp,
   isDate,
+  isNativeFunction,
   randomSelect,
   generateUUID,
   getURLParams
