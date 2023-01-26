@@ -47,6 +47,10 @@ function isNativeFunction(val: any): boolean {
   return typeof val === 'function' && /native code/.test(val.toString())
 }
 
+function randomNumber(lower: number, upper: number) {
+  return Math.floor(Math.random() * (upper - lower)) + lower
+}
+
 function randomSelect<T>(targetArr: T[], quantity: number): T[] {
   const { length } = targetArr
   if(quantity > length) {
@@ -118,6 +122,7 @@ export {
   isRegExp,
   isDate,
   isNativeFunction,
+  randomNumber,
   randomSelect,
   generateUUID,
   getURLParams
