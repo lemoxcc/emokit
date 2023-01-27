@@ -110,6 +110,14 @@ function getURLParams(url: string) {
   return result
 }
 
+function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+function uncapitalize(str: string) {
+  return str.charAt(0).toLowerCase() + str.slice(1)
+}
+
 export {
   isString,
   isNumber,
@@ -125,5 +133,7 @@ export {
   randomNumber,
   randomSelect,
   generateUUID,
-  getURLParams
+  getURLParams,
+  capitalize,
+  uncapitalize
 }
