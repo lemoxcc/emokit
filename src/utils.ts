@@ -122,6 +122,10 @@ function camelCase(str: string) {
   return str.replace(/[_-][a-z]/g, str => str.slice(1).toUpperCase())
 }
 
+function sleep(interval: number) {
+  return new Promise(resolve => setTimeout(resolve, interval))
+}
+
 export {
   isString,
   isNumber,
@@ -140,5 +144,6 @@ export {
   getURLParams,
   capitalize,
   uncapitalize,
-  camelCase
+  camelCase,
+  sleep
 }
