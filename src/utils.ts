@@ -130,6 +130,10 @@ function difference<T>(arr1: readonly T[], arr2: readonly any[]) {
   return arr1.filter(item => !arr2.includes(item))
 }
 
+function union<T>(arr1: readonly T[], arr2: readonly T[]) {
+  return Array.from(new Set([arr1, arr2]))
+}
+
 export {
   isString,
   isNumber,
@@ -150,5 +154,6 @@ export {
   uncapitalize,
   camelCase,
   sleep,
-  difference
+  difference,
+  union
 }
