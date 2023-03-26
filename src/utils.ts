@@ -126,6 +126,10 @@ function sleep(interval: number) {
   return new Promise(resolve => setTimeout(resolve, interval))
 }
 
+function difference<T>(arr1: readonly T[], arr2: readonly any[]) {
+  return arr1.filter(item => !arr2.includes(item))
+}
+
 export {
   isString,
   isNumber,
@@ -145,5 +149,6 @@ export {
   capitalize,
   uncapitalize,
   camelCase,
-  sleep
+  sleep,
+  difference
 }
