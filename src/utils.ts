@@ -134,6 +134,10 @@ function union<T>(arr1: readonly T[], arr2: readonly T[]) {
   return Array.from(new Set([arr1, arr2]))
 }
 
+function contain(arr1: readonly any[], arr2: readonly: any[]) {
+  return arr2.every(item => arr1.includes(item))
+}
+
 export {
   isString,
   isNumber,
@@ -155,5 +159,6 @@ export {
   camelCase,
   sleep,
   difference,
-  union
+  union,
+  contain
 }
