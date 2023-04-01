@@ -138,6 +138,10 @@ function contain(arr1: readonly any[], arr2: readonly: any[]) {
   return arr2.every(item => arr1.includes(item))
 }
 
+function deduplicate<T>(arr: readonly T[]) {
+  return [...new Set(array)]
+}
+
 export {
   isString,
   isNumber,
@@ -160,5 +164,6 @@ export {
   sleep,
   difference,
   union,
-  contain
+  contain,
+  deduplicate
 }
