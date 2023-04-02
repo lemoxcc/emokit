@@ -18,10 +18,15 @@ function isPdf(filename: string) {
   return checkFilename(filename, ['pdf'])
 }
 
+function isWord(filename: string) {
+  return checkFilename(filename, ['doc', 'docx'])
+}
+
 export {
   getExt,
   checkFilename,
   isImage,
   isH5Video,
-  isPdf
+  isPdf,
+  isWord
 }
