@@ -14,9 +14,14 @@ function isH5Video(filename: string) {
   return checkFilename(filename, ['mp4', 'webm', 'ogg'])
 }
 
+function isPdf(filename: string) {
+  return checkFilename(filename, ['pdf'])
+}
+
 export {
   getExt,
   checkFilename,
   isImage,
-  isH5Video
+  isH5Video,
+  isPdf
 }
