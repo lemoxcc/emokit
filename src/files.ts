@@ -6,7 +6,12 @@ function checkFilename(filename: string, list: string[]) {
   return list.includes(getExt(filename))
 }
 
+function isImage(filename: string) {
+  return checkFilename(filename, ['png', 'jpeg', 'jpg', 'gif', 'bmp', 'wbep'])
+}
+
 export {
   getExt,
-  checkFilename
+  checkFilename,
+  isImage
 }
