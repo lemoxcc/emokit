@@ -10,8 +10,13 @@ function isImage(filename: string) {
   return checkFilename(filename, ['png', 'jpeg', 'jpg', 'gif', 'bmp', 'wbep'])
 }
 
+function isH5Video(filename: string) {
+  return checkFilename(filename, ['mp4', 'webm', 'ogg'])
+}
+
 export {
   getExt,
   checkFilename,
-  isImage
+  isImage,
+  isH5Video
 }
