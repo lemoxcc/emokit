@@ -22,11 +22,16 @@ function isWord(filename: string) {
   return checkFilename(filename, ['doc', 'docx'])
 }
 
+function isExcel(filename: string) {
+  return checkFilename(filename, ['xls', 'xlsx'])
+}
+
 export {
   getExt,
   checkFilename,
   isImage,
   isH5Video,
   isPdf,
-  isWord
+  isWord,
+  isExcel
 }
