@@ -110,6 +110,16 @@ function getURLParams(url: string) {
   return result
 }
 
+function objectToQueryString(obj: { [key: string]: any }): string {
+  const keyValuePairs: string[] = [];
+  for (const key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      keyValuePairs.push(`${encodeURIComponent(key)}=${encodeURIComponent(obj[key])}`);
+    }
+  }
+  return keyValuePairs.join('&');
+}
+
 function capitalize(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
@@ -158,6 +168,7 @@ export {
   randomSelect,
   generateUUID,
   getURLParams,
+  objectToQueryString,
   capitalize,
   uncapitalize,
   camelCase,
