@@ -17,6 +17,11 @@ function sortByProperty<T>(arr: T[], prop: keyof T, asc = true): T[] {
   return sortedArr;
 }
 
+function pluck<T extends { [key: string]: any }, K extends keyof T>(array: T[], key: K): T[K][] {
+  return array.map((item) => item[key])
+}
+
 export {
-  sortByProperty
+  sortByProperty,
+  pluck
 }
