@@ -21,7 +21,22 @@ function pluck<T extends { [key: string]: any }, K extends keyof T>(array: T[], 
   return array.map((item) => item[key])
 }
 
+function chunkArray<T>(arr: T[], chunkSize: number, dropRemainder: boolean = false, startFromIndex: number = 0): T[][] {
+  const chunks: T[][] = [];
+  let index = startFromIndex;
+  while (index < arr.length) {
+    const chunk = arr.slice(index, index + chunkSize);
+    if (chunk.length < chunkSize && dropRemainder) {
+      break;
+    }
+    chunks.push(chunk);
+    index += chunkSize;
+  }
+  return chunks;
+}
+
 export {
   sortByProperty,
-  pluck
+  pluck,
+  chunkArray
 }
