@@ -110,6 +110,16 @@ function getURLParams(url: string) {
   return result
 }
 
+function objectToQueryString(obj: { [key: string]: any }): string {
+  const keyValuePairs: string[] = [];
+  for (const key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      keyValuePairs.push(`${encodeURIComponent(key)}=${encodeURIComponent(obj[key])}`);
+    }
+  }
+  return keyValuePairs.join('&');
+}
+
 function capitalize(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
@@ -124,6 +134,33 @@ function camelCase(str: string) {
 
 function sleep(interval: number) {
   return new Promise(resolve => setTimeout(resolve, interval))
+}
+
+function difference<T>(arr1: readonly T[], arr2: readonly any[]) {
+  return arr1.filter(item => !arr2.includes(item))
+}
+
+function union<T>(arr1: readonly T[], arr2: readonly T[]) {
+  return Array.from(new Set([arr1, arr2]))
+}
+
+function contain(arr1: readonly any[], arr2: readonly: any[]) {
+  return arr2.every(item => arr1.includes(item))
+}
+
+function deduplicate<T>(arr: readonly T[]) {
+  return [...new Set(array)]
+}
+
+function arrayBufferToBase64(buffer: ArrayBuffer): string {
+  let binary = ''
+  const bytes = new Uint8Array(buffer)
+  const len = bytes.byteLength
+  for (let i = 0; i < len; i++) {
+    binary += String.fromCharCode(bytes[i])
+  }
+ 
+  return btoa(binary)
 }
 
 export {
@@ -142,8 +179,14 @@ export {
   randomSelect,
   generateUUID,
   getURLParams,
+  objectToQueryString,
   capitalize,
   uncapitalize,
   camelCase,
-  sleep
+  sleep,
+  difference,
+  union,
+  contain,
+  deduplicate,
+  arrayBufferToBase64
 }
