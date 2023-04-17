@@ -2,7 +2,7 @@ import { isIPv4, isIPv4CIDR } from './rules'
 
 function splitIPv4(address: string): number[] {
   if(!isIPv4(address)) {
-    throw new Error('parameter must be an IPv4 address')
+    throw new Error('Parameter is not a valid ipv4')
   }
 
   return address.split('.').map(Number)
