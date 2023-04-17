@@ -25,6 +25,16 @@ function checkIsInSameNetworkSegment(cidr1: string, cidr2: string): boolean {
   return (ip1Binary & mask1 as any) === (ip2Binary & mask2 as any)
 }
 
+function IPv4ToBinary(ip: string) {
+  if(!isIPv4(ip)) {
+    throw new Error('Parameter is not a valid ipv4')
+  }
+
+  const ipArray = ip.split('.').map(Number)
+  return (ipArray[0] << 24) | (ipArray[1] << 16) | (ipArray[2] << 8) | ipArray[3]
+}
+
 export {
-  checkIsInSameNetworkSegment
+  checkIsInSameNetworkSegment,
+  IPv4ToBinary
 }
