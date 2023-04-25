@@ -13,8 +13,14 @@ function isIPv6(address: string): boolean {
   return pattern.test(address)
 }
 
+function isValidEmail(email: string) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return regex.test(email)
+}
+
 export {
   isIPv4,
   isIPv6,
-  isIPv4CIDR
+  isIPv4CIDR,
+  isValidEmail
 }
