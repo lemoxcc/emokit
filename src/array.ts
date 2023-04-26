@@ -35,8 +35,19 @@ function chunkArray<T>(arr: T[], chunkSize: number, dropRemainder: boolean = fal
   return chunks;
 }
 
+function remove<T>(list: T[], item: T) {
+  const index = list.indexOf(item)
+  if (index >= 0) {
+    list.splice(index, 1)
+    return true
+  } else {
+    return false
+  }
+}
+
 export {
   sortByProperty,
   pluck,
-  chunkArray
+  chunkArray,
+  remove
 }
