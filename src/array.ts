@@ -45,9 +45,19 @@ function remove<T>(list: T[], item: T) {
   }
 }
 
+function omit<T, K extends keyof T>(source: T, keys?: Iterable<K>) {
+  if (!keys) return { ...source }
+  const result = { ...source } as Omit<T, K>
+  for (const key of keys) {
+    Reflect.deleteProperty(result, key)
+  }
+  return result
+}
+
 export {
   sortByProperty,
   pluck,
   chunkArray,
-  remove
+  remove,
+  omit
 }
