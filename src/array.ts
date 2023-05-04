@@ -54,10 +54,15 @@ function omit<T, K extends keyof T>(source: T, keys?: Iterable<K>) {
   return result
 }
 
+function makeArray<T>(source: null | undefined | T | T[]) {
+  return Array.isArray(source) ? source : isNullable(source) ? [] : [source]
+}
+
 export {
   sortByProperty,
   pluck,
   chunkArray,
   remove,
-  omit
+  omit,
+  makeArray
 }
