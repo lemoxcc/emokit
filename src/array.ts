@@ -58,11 +58,16 @@ function makeArray<T>(source: null | undefined | T | T[]) {
   return Array.isArray(source) ? source : isNullable(source) ? [] : [source]
 }
 
+function intersection<T>(array1: readonly T[], array2: readonly T[]) {
+  return array1.filter(item => array2.includes(item))
+}
+
 export {
   sortByProperty,
   pluck,
   chunkArray,
   remove,
   omit,
-  makeArray
+  makeArray,
+  intersection
 }
