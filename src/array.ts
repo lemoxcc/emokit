@@ -62,6 +62,10 @@ function intersection<T>(array1: readonly T[], array2: readonly T[]) {
   return array1.filter(item => array2.includes(item))
 }
 
+function difference<S>(array1: readonly S[], array2: readonly any[]) {
+  return array1.filter(item => !array2.includes(item))
+}
+
 export {
   sortByProperty,
   pluck,
@@ -69,5 +73,6 @@ export {
   remove,
   omit,
   makeArray,
-  intersection
+  intersection,
+  difference
 }
