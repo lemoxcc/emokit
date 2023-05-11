@@ -66,6 +66,18 @@ function difference<S>(array1: readonly S[], array2: readonly any[]) {
   return array1.filter(item => !array2.includes(item))
 }
 
+function union<T>(arr1: readonly T[], arr2: readonly T[]) {
+  return Array.from(new Set([arr1, arr2]))
+}
+
+function contain(arr1: readonly any[], arr2: readonly: any[]) {
+  return arr2.every(item => arr1.includes(item))
+}
+
+function deduplicate<T>(arr: readonly T[]) {
+  return [...new Set(array)]
+}
+
 export {
   sortByProperty,
   pluck,
@@ -74,5 +86,8 @@ export {
   omit,
   makeArray,
   intersection,
-  difference
+  difference,
+  union,
+  contain,
+  deduplicate
 }
