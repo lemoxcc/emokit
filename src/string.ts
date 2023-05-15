@@ -16,6 +16,21 @@ function generateRandomString(length: number, type: 'lowercase' | 'uppercase' | 
   return result
 }
 
+function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+function uncapitalize(str: string) {
+  return str.charAt(0).toLowerCase() + str.slice(1)
+}
+
+function camelCase(str: string) {
+  return str.replace(/[_-][a-z]/g, str => str.slice(1).toUpperCase())
+}
+
 export {
-  generateRandomString
+  generateRandomString,
+  capitalize,
+  uncapitalize,
+  camelCase
 }

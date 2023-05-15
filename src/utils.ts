@@ -120,18 +120,6 @@ function objectToQueryString(obj: { [key: string]: any }): string {
   return keyValuePairs.join('&');
 }
 
-function capitalize(str: string) {
-  return str.charAt(0).toUpperCase() + str.slice(1)
-}
-
-function uncapitalize(str: string) {
-  return str.charAt(0).toLowerCase() + str.slice(1)
-}
-
-function camelCase(str: string) {
-  return str.replace(/[_-][a-z]/g, str => str.slice(1).toUpperCase())
-}
-
 function sleep(interval: number) {
   return new Promise(resolve => setTimeout(resolve, interval))
 }
@@ -164,9 +152,6 @@ export {
   generateUUID,
   getURLParams,
   objectToQueryString,
-  capitalize,
-  uncapitalize,
-  camelCase,
-  sleep
+  sleep,
   arrayBufferToBase64
 }
